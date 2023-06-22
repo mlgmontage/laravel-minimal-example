@@ -6,13 +6,12 @@
         <title>Laravel</title>
     </head>
     <body>
-        <a href="/create">create</a>
-        <h1>Articles</h1>
-
-        @foreach ($articles as $item)
-            <a href="/article/{{ $item->id }}">
-                <h1>{{ $item->title }}</h1> 
-            </a>
-        @endforeach
+        <h1>Create article</h1>
+        <form action="{{url('create')}}" method="POST">
+            @csrf
+            <input name="title" />
+            <input name="text" />
+            <button type="submit">submit</button>
+        </form>
     </body>
 </html>
