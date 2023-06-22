@@ -14,6 +14,11 @@
         <h1 class="my-3">{{ $article->title }}</h1>
         <p>{{ $article->text }}</p>
         <a href="/articles">go back</a>
+        <form action="{{ url('delete/' . $article->id) }}" method="POST">
+            @method('DELETE')
+            @csrf
+            <button class="btn btn-danger my-3">delete</button>
+        </form>
     </div>
 </body>
 

@@ -31,3 +31,9 @@ Route::get('/article/{id}', function (Request $request, string $id) {
     $article = ArticleModel::findOrFail($id);
     return view('article', ['article' => $article]);
 });
+
+Route::delete('/delete/{id}', function (Request $request, string $id) {
+    $article = ArticleModel::findOrFail($id);
+    $article->delete();
+    return redirect('/articles');
+});
