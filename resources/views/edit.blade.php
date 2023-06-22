@@ -12,17 +12,19 @@
 <body>
     <div class="container">
         <h1 class="my-3">Create article</h1>
-        <form action="{{ url('create') }}" method="POST">
+        <form action="{{ url('edit/' . $article->id) }}" method="POST">
+            @method('PUT')
             @csrf
 
             <div class="mb-3">
-                <input type="text" class="form-control" name="title" placeholder="title">
+                <input type="text" class="form-control" name="title" placeholder="title"
+                    value="{{ $article->title }}">
             </div>
 
             <div class="mb-3">
-                <textarea class="form-control" name="text" rows="3" placeholder="write your blog"></textarea>
+                <textarea class="form-control" name="text" rows="3" placeholder="write your blog">{{ $article->text }}</textarea>
             </div>
-            <button class="btn btn-primary" type="submit">create</button>
+            <button class="btn btn-primary" type="submit">save</button>
 
         </form>
     </div>

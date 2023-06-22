@@ -13,7 +13,8 @@
     <div class="container">
         <h1 class="my-3">{{ $article->title }}</h1>
         <p>{{ $article->text }}</p>
-        <a href="/articles">go back</a>
+        <a href="/articles" class="btn btn-secondary">go back</a>
+        <a href="/edit/{{ $article->id }}" class="btn btn-warning">edit</a>
         <form action="{{ url('delete/' . $article->id) }}" method="POST">
             @method('DELETE')
             @csrf

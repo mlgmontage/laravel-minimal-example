@@ -3,5 +3,5 @@
 - [x] Styling with bootstrap
 - [x] Articles list
 - [x] Create article
-- [ ] Update article
-- [ ] Delete article 
+- [x] Update article
+- [x] Delete article 
