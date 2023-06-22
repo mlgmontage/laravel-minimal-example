@@ -6,6 +6,7 @@
         <title>Laravel</title>
     </head>
     <body>
-        <h1>Article</h1>
+        <h1>{{ $article->title }}</h1>
+        <p>{{ $article->text }}</p>
     </body>
 </html>

@@ -27,8 +27,7 @@ Route::post('/create', function (Request $request) {
     return redirect('/articles');
 });
 
-
-
 Route::get('/article/{id}', function (Request $request, string $id) {
-    return view('article', ['id' => $id]);
+    $article = ArticleModel::findOrFail($id);
+    return view('article', ['article' => $article]);
 });
